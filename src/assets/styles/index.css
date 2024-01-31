@@ -7,7 +7,7 @@
 
 @font-face {
   font-family: poppins;
-  src: url(../fonts/poppins/Poppins-Thin.ttf);
+  src: url(../fonts/poppins/Poppins-Light.ttf);
 }
 /* fonts end */
 
@@ -22,7 +22,30 @@ body{
   display: flex;
   flex-direction: column;
   justify-items: center;
+  align-items: center;
   margin-top: 25vh;
+}
+
+.loginMain button{
+  background-color: #5ECE7B;
+  max-width: 260px;
+  width: 100%;
+  border: 1px solid transparent;
+  margin: 5px 10px 0 10px;
+  padding: 10px;
+  font-family: poppins;
+  font-size: 0.8rem;
+  color: #fff;
+  box-sizing: border-box;
+  cursor:pointer;
+}
+
+.loginMain p{
+  font-family: raleway;
+  font-weight: 500;
+  font-size: 0.7rem;
+  color: #0F6450;
+  cursor:pointer;
 }
 
 .loginTitle{
@@ -51,95 +74,60 @@ body{
 
 .loginInputs input{
   margin: 10px;
-  max-width: 300px;
+  max-width: 250px;
+  width: 100%; 
   font-family:poppins;
   border-radius: 10px;
-  padding: 5px;
+  padding: 5px 80px 5px 30px;
+  border: 1px solid #EEE;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
 }
+
+.loginInputs input::placeholder {
+  color: #333; 
+  font-size: 0.8rem;
+  font-family: poppins, sans-serif;
+  opacity: 0.5;
+}
+
+.loginInputs input:focus {
+  outline: none !important;
+    border:1px solid #5ECE7Bed;
+    box-shadow: 0 0 10px #5ECE7B;
+}
+
+
+
+.loginInputs .inputWithIcon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.loginInputs .inputWithIcon .icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #EEE;
+}
+
 
 /* classes end */
 
 
-/* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body{
-  background-color: red;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
-
-
 @media only screen and (min-width: 768px){
-  /* body{
-    background-color: yellow;
-  } */
-
   .loginInputs input{
-    max-width: 400px;
+    min-width: 290px;
+  }
+
+  .loginMain button{
+    min-width: 300px;
+  }
+
+  .loginMain p{
+    font-size: 0.9rem;
   }
 }

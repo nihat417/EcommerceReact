@@ -1,21 +1,29 @@
-import React from 'react'
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope,faLock } from '@fortawesome/free-solid-svg-icons';
 
 function Login() {
   return (
     <div className='loginMain'>
-        <div className='loginTitle'>
-            <h1>Hello Again!</h1>
-            <h3>Welcome Back</h3>
+      <div className='loginTitle'>
+        <h1>Hello Again!</h1>
+        <h3>Welcome Back</h3>
+      </div>
+      <div className='loginInputs'>
+        <div className='inputWithIcon'>
+          <FontAwesomeIcon icon={faEnvelope} className='icon' />
+          <input className='emailInput' type="email" placeholder='Email Address' />
         </div>
-        <div className='loginInputs'>
-            <input type="email" placeholder='Email Address' />
-            <input type="password" placeholder='Password' />
+        <div className='inputWithIcon'>
+          <FontAwesomeIcon icon={faLock} className='icon'/>
+          <input type="password" placeholder='Password' />
         </div>
+      </div>
 
-        <button></button>
-        <p></p>
+      <button type="submit">Login</button>
+      <p>Do not have an account? <span style={{ textDecoration: "underline" }}>Register</span></p>
     </div>
   )
 }
 
-export default Login
+export default Login;
