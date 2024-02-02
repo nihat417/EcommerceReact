@@ -123,6 +123,29 @@ body{
   flex-direction: column;
 }
 
+.navbar{
+  display: flex;
+  height: 8vh;
+  justify-content: space-between;
+  background-color: yellow;
+}
+
+.navitems{
+  display: none;
+}
+
+.hamburger{
+  display: flex;
+  padding-top: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.logocontainer{
+  padding-top: 10px;
+  cursor: pointer;
+}
+
 /* classes end */
 
 
@@ -147,4 +170,25 @@ body{
   .authContainer p{
     font-size: 0.9rem;
   }
+  
+  .navitems {
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+  }
+
+  .navitem{
+    display: flex;
+    align-items: center;
+    padding: 30px 10px;
+    cursor: pointer;
+    /* border-bottom:1px solid #5ECE7B; */
+    font-family: raleway;
+  }
+
+  .hamburger{
+    display: none;
+  }
+
+  
 }
