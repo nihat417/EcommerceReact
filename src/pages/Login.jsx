@@ -4,8 +4,8 @@ import { faEnvelope,faLock } from '@fortawesome/free-solid-svg-icons';
 
 function Login() {
   return (
-    <div className='loginMain'>
-      <div className='loginTitle'>
+    <div className='authContainer'>
+      <div className='authPageTitle'>
         <h1>Hello Again!</h1>
         <h3>Welcome Back</h3>
       </div>

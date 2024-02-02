@@ -9,6 +9,11 @@
   font-family: poppins;
   src: url(../fonts/poppins/Poppins-Light.ttf);
 }
+
+@font-face {
+  font-family: monserrat;
+  src: url(../fonts/monserrat/Montserrat-VariableFont_wght.ttf);
+}
 /* fonts end */
 
 
@@ -18,7 +23,7 @@ body{
   background-color: #fff;
 }
 
-.loginMain{
+.authContainer{
   display: flex;
   flex-direction: column;
   justify-items: center;
@@ -26,9 +31,9 @@ body{
   margin-top: 25vh;
 }
 
-.loginMain button{
+.authContainer button{
   background-color: #5ECE7B;
-  max-width: 260px;
+  max-width: 280px;
   width: 100%;
   border: 1px solid transparent;
   margin: 5px 10px 0 10px;
@@ -40,7 +45,7 @@ body{
   cursor:pointer;
 }
 
-.loginMain p{
+.authContainer p{
   font-family: raleway;
   font-weight: 500;
   font-size: 0.7rem;
@@ -48,19 +53,20 @@ body{
   cursor:pointer;
 }
 
-.loginTitle{
+.authPageTitle{
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: raleway;
 }
 
-.loginTitle h1{
+.authPageTitle h1{
   font-weight: 700;
+  font-family: raleway;
   font-size: 2.18rem;
 }
 
-.loginTitle h3{
+.authPageTitle h3{
   font-size: 1.56rem;
   font-weight: normal;
   margin-top: -20px;
@@ -74,7 +80,7 @@ body{
 
 .loginInputs input{
   margin: 10px;
-  max-width: 250px;
+  max-width: 290px;
   width: 100%; 
   font-family:poppins;
   border-radius: 10px;
@@ -98,8 +104,6 @@ body{
     box-shadow: 0 0 10px #5ECE7B;
 }
 
-
-
 .loginInputs .inputWithIcon {
   position: relative;
   display: flex;
@@ -114,20 +118,33 @@ body{
   color: #EEE;
 }
 
+.smallChildcontainer{
+  display: flex;
+  flex-direction: column;
+}
 
 /* classes end */
 
 
 @media only screen and (min-width: 768px){
+  .smallChildcontainer{
+    flex-direction: row;
+  }
+
+  .authPageTitle h1{
+    font-family: monserrat;
+    font-size: 2.91rem;
+  }
+
   .loginInputs input{
     min-width: 290px;
   }
 
-  .loginMain button{
+  .authContainer button{
     min-width: 300px;
   }
 
-  .loginMain p{
+  .authContainer p{
     font-size: 0.9rem;
   }
 }
