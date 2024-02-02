@@ -1,25 +1,20 @@
 import React from "react";
 
-const Hamburger = ({ isOpen, toggleMenu }) => {
+function Hamburger() {
   return (
-    <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="icon icon-tabler icon-tabler-menu-2"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        strokeWidth="2"
-        stroke="currentColor"
-        fill="none"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-        <path d="M4 6l16 0" />
-        <path d="M4 12l16 0" />
-        <path d="M4 18l16 0" />
-      </svg>
+    <div className="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label className="menu__btn" htmlFor="menu__toggle">
+            <span></span>
+        </label>
+
+        <ul className="menu__box">
+            <li><a className="menu__item" href="#">Home</a></li>
+            <li><a className="menu__item" href="#">About</a></li>
+            <li><a className="menu__item" href="#">Team</a></li>
+            <li><a className="menu__item" href="#">Contact</a></li>
+            <li><a className="menu__item" href="#">Twitter</a></li>
+        </ul>
     </div>
   );
 };
