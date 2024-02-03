@@ -9,11 +9,10 @@ function Hamburger() {
         </label>
 
         <ul className="menu__box">
-            <li><a className="menu__item" href="#">Home</a></li>
-            <li><a className="menu__item" href="#">About</a></li>
-            <li><a className="menu__item" href="#">Team</a></li>
-            <li><a className="menu__item" href="#">Contact</a></li>
-            <li><a className="menu__item" href="#">Twitter</a></li>
+            <li><a className="menu__item">Home</a></li>
+            <li><a className="menu__item">Women</a></li>
+            <li><a className="menu__item">Men</a></li>
+            <li><a className="menu__item">Kids</a></li>
         </ul>
     </div>
   );

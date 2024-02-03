@@ -1,4 +1,3 @@
-
 /* fonts start */
 @font-face {
   font-family: raleway;
@@ -16,14 +15,13 @@
 }
 /* fonts end */
 
-
 /* classes start */
 
-body{
+body {
   background-color: #fff;
 }
 
-.authContainer{
+.authContainer {
   display: flex;
   flex-direction: column;
   justify-items: center;
@@ -31,8 +29,8 @@ body{
   margin-top: 25vh;
 }
 
-.authContainer button{
-  background-color: #5ECE7B;
+.authContainer button {
+  background-color: #5ece7b;
   max-width: 280px;
   width: 100%;
   border: 1px solid transparent;
@@ -42,57 +40,57 @@ body{
   font-size: 0.8rem;
   color: #fff;
   box-sizing: border-box;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.authContainer p{
+.authContainer p {
   font-family: raleway;
   font-weight: 500;
   font-size: 0.7rem;
-  color: #0F6450;
-  cursor:pointer;
+  color: #0f6450;
+  cursor: pointer;
 }
 
-.authPageTitle{
+.authPageTitle {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: raleway;
 }
 
-.authPageTitle h1{
+.authPageTitle h1 {
   font-weight: 700;
   font-family: raleway;
   font-size: 2.18rem;
 }
 
-.authPageTitle h3{
+.authPageTitle h3 {
   font-size: 1.56rem;
   font-weight: normal;
   margin-top: -20px;
 }
 
-.loginInputs{
+.loginInputs {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.loginInputs input{
+.loginInputs input {
   margin: 10px;
   max-width: 290px;
-  width: 100%; 
-  font-family:poppins;
+  width: 100%;
+  font-family: poppins;
   border-radius: 10px;
   padding: 5px 80px 5px 30px;
-  border: 1px solid #EEE;
+  border: 1px solid #eee;
   background-color: #fff;
   transition: background-color 0.3s ease;
   box-sizing: border-box;
 }
 
 .loginInputs input::placeholder {
-  color: #333; 
+  color: #333;
   font-size: 0.8rem;
   font-family: poppins, sans-serif;
   opacity: 0.5;
@@ -100,8 +98,8 @@ body{
 
 .loginInputs input:focus {
   outline: none !important;
-    border:1px solid #5ECE7Bed;
-    box-shadow: 0 0 10px #5ECE7B;
+  border: 1px solid #5ece7bed;
+  box-shadow: 0 0 10px #5ece7b;
 }
 
 .loginInputs .inputWithIcon {
@@ -115,52 +113,97 @@ body{
   left: 20px;
   top: 50%;
   transform: translateY(-50%);
-  color: #EEE;
+  color: #eee;
 }
 
-.smallChildcontainer{
+.smallChildcontainer {
   display: flex;
   flex-direction: column;
 }
 
-.navbar{
+.navbar {
   display: flex;
   height: 8vh;
   justify-content: space-between;
   background-color: yellow;
 }
 
-.navitems{
+.navitems {
   display: none;
 }
 
-.logocontainer{
+.logocontainer {
   padding-top: 10px;
   cursor: pointer;
 }
 
-/* classes end */
+.basket {
+  display: flex;
+  align-items: center;
+  padding: 30px 10px;
+  cursor: pointer;
+}
 
+.valute {
+  margin-right: 10px;
+}
+
+.categoryName {
+  display: flex;
+  margin: 50px 0 50px 10px;
+}
+
+.categoryName h1 {
+  font-family: raleway;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardComp {
+  margin: 20px;
+  padding: 15px;
+  background-color: red;
+  max-width: 380px;
+}
+
+/* classes end */
 
 /* id start */
 
 #menu__toggle {
   opacity: 0;
 }
+
 #menu__toggle:checked + .menu__btn > span {
   transform: rotate(45deg);
 }
+
 #menu__toggle:checked + .menu__btn > span::before {
   top: 0;
   transform: rotate(0deg);
 }
+
 #menu__toggle:checked + .menu__btn > span::after {
   top: 0;
   transform: rotate(90deg);
 }
+
 #menu__toggle:checked ~ .menu__box {
   left: 0 !important;
 }
+
+#valuteCombobox {
+  background-color: transparent;
+  border: none;
+}
+
 .menu__btn {
   position: fixed;
   top: 20px;
@@ -179,14 +222,14 @@ body{
   width: 100%;
   height: 2px;
   background-color: #616161;
-  transition-duration: .25s;
+  transition-duration: 0.25s;
 }
 .menu__btn > span::before {
-  content: '';
+  content: "";
   top: -8px;
 }
 .menu__btn > span::after {
-  content: '';
+  content: "";
   top: 8px;
 }
 .menu__box {
@@ -200,21 +243,23 @@ body{
   padding: 80px 0;
   list-style: none;
   background-color: #000;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
-  transition-duration: .25s;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  transition-duration: 0.25s;
 }
 .menu__item {
   display: block;
   padding: 12px 24px;
-  color: #333;
-  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  font-family: raleway sans-serif;
   font-size: 20px;
   font-weight: 600;
   text-decoration: none;
-  transition-duration: .25s;
+  transition-duration: 0.25s;
+  cursor: pointer;
 }
 .menu__item:hover {
-  background-color: #CFD8DC;
+  color: #5ece7bed;
+  text-shadow: 0 0 10px #5ece7b;
 }
 
 /* id end */
@@ -225,36 +270,35 @@ body{
   }
 }
 
-
-@media only screen and (min-width: 768px){
-  .smallChildcontainer{
+@media only screen and (min-width: 768px) {
+  .smallChildcontainer {
     flex-direction: row;
   }
 
-  .authPageTitle h1{
+  .authPageTitle h1 {
     font-family: monserrat;
     font-size: 2.91rem;
   }
 
-  .loginInputs input{
+  .loginInputs input {
     min-width: 290px;
   }
 
-  .authContainer button{
+  .authContainer button {
     min-width: 300px;
   }
 
-  .authContainer p{
+  .authContainer p {
     font-size: 0.9rem;
   }
-  
+
   .navitems {
     display: flex;
     flex-direction: row;
     margin-left: 100px;
   }
 
-  .navitem{
+  .navitem {
     display: flex;
     align-items: center;
     padding: 30px 10px;
@@ -263,8 +307,27 @@ body{
     font-family: raleway;
   }
 
-  .hamburger-menu{
+  .hamburger-menu {
     display: none;
   }
-  
+
+  .basket {
+    margin-right: 50px;
+  }
+
+  .categoryName {
+    margin: 80px 0 100px 100px;
+  }
+
+  .categoryName h1 {
+    font-size: 2.62rem;
+  }
+
+  .mainContainer {
+    flex-direction: row;
+  }
+
+  .cardComp {
+    max-width: 100%;
+  }
 }
