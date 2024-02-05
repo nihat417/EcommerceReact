@@ -14,6 +14,7 @@ function MainPage() {
       <div className="mainContainer">
         <Card />
         <Card />
+        <Card />
       </div>
     </div>
   );
