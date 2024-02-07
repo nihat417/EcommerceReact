@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
 import Card from "./components/Card";
+import ProductInfo from "./ProductInfo";
 
 function MainPage() {
   return (
@@ -15,7 +16,12 @@ function MainPage() {
         <Card />
         <Card />
         <Card />
+        <Card />
+        <Card />
+        <Card />
       </div>
+
+      {/* <ProductInfo/> */}
     </div>
   );
 }
