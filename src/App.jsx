@@ -14,10 +14,6 @@ function App() {
     dispatch(setToken(token));
   };
 
-  const logOut = () => {
-    dispatch(clearToken());
-  };
-
   return (
     <>
       <Routes>
@@ -30,13 +26,7 @@ function App() {
 
         <Route
           path="/main"
-          element={
-            token ? (
-              <MainPage logout={logout} />
-            ) : (
-              <Navigate to="/login" replace />
-            )
-          }
+          element={token ? <MainPage /> : <Navigate to="/login" replace />}
         />
       </Routes>
     </>

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch, useSelector } from "react-redux";
 import { faUser, faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { registerUser } from "../../redux/slices/authSlice";
+import { registerUser } from "../../redux/slices/registerSlice";
 
 function Register() {
   const [formData, setFormData] = useState({

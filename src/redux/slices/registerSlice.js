@@ -21,13 +21,11 @@ export const registerUser = createAsyncThunk(
 
       console.log(response);
       return await response.json();
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
+    } catch (error) {return thunkAPI.rejectWithValue(error.message);}
   }
 );
 
-const authSlice = createSlice({
+const registerSlice = createSlice({
   name: "auth",
   initialState: {
     loading: false,
@@ -50,4 +48,4 @@ const authSlice = createSlice({
   },
 });
 
-export default authSlice.reducer;
+export default registerSlice.reducer;
