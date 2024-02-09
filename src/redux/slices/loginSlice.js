@@ -12,9 +12,12 @@ export const loginUser = createAsyncThunk(
         body: JSON.stringify({ email, password }),
       });
 
+      if (response.status === 401) {
+        throw new error("Invalid email or password");
+      }
+
       if (!response.ok) {
         const data = await response.json();
-        console.log(data.message);
         throw new Error(data.message);
       }
 
@@ -47,6 +50,7 @@ const loginSlice = createSlice({
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
+        state.error = action.error.message;
       });
   },
 });

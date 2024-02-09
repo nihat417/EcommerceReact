@@ -2,17 +2,19 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
 
-import { Link } from "react-router-dom";
+import { Link,useNavigate  } from "react-router-dom";
 import { loginUser } from "../../redux/slices/loginSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-function Login({ saveToken }) {
+function Login() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
-  const [error, setError] = useState(null);
-  const loading = useSelector((state) => state.auth.loading);
+  
+  const navigate = useNavigate()
+  const loading = useSelector((state) => state.login.loading);
+  const error = useSelector((state) => state.login.error);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -21,13 +23,14 @@ function Login({ saveToken }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(null);
+    dispatch(loginUser(formData));
 
     try {
-      const token = await dispatch(loginUser(formData));
-      saveToken(token);
+      await dispatch(loginUser(formData));
+      navigate("/");
     } catch (error) {
       setError(error.message);
+      throw error;
     }
   };
 
@@ -64,8 +67,8 @@ function Login({ saveToken }) {
           </div>
         </div>
 
-        <button type="submit" disabled={loading}>
-          Login
+        <button type="Log in" disabled={loading}>
+          {loading ? "Logining ..." : "Log in"}
         </button>
       </form>
       {error && <p>{error}</p>}
