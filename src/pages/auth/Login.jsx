@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { loginUser } from "../../redux/slices/loginSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-function Login() {
+function Login({ saveToken }) {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -24,7 +24,8 @@ function Login() {
     setError(null);
 
     try {
-      await dispatch(loginUser(formData));
+      const token = await dispatch(loginUser(formData));
+      saveToken(token);
     } catch (error) {
       setError(error.message);
     }

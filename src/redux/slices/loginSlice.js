@@ -19,7 +19,8 @@ export const loginUser = createAsyncThunk(
       }
 
       const userData = await response.json();
-      thunkAPI.dispatch(setToken(userData.token));
+      thunkAPI.dispatch(setToken(userData.user.token));
+      console.log("Token:", userData.user.token);
       return userData;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
