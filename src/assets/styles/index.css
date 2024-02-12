@@ -176,6 +176,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0);
   box-sizing: border-box;
   max-width: 360px;
+  height: 100%;
 }
 
 .menu__btn {
@@ -223,7 +224,6 @@ body {
 .menu__item {
   display: block;
   padding: 12px 24px;
-  color: #fff;
   font-family: raleway sans-serif;
   font-size: 20px;
   font-weight: 600;
@@ -231,6 +231,15 @@ body {
   transition-duration: 0.25s;
   cursor: pointer;
 }
+
+.menu__item__text {
+  color: #fff;
+}
+
+.menu__item__active {
+  color: #5ece7bed;
+}
+
 .menu__item:hover {
   color: #5ece7bed;
   text-shadow: 0 0 10px #5ece7b;
@@ -246,7 +255,7 @@ body {
   padding: 10px;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .infoImages {
@@ -359,6 +368,10 @@ body {
   cursor: pointer;
 }
 
+.nondis{
+  display: none;
+}
+
 .productInfo div {
   padding: 10px;
 }
@@ -424,6 +437,7 @@ body {
 
 .cardComp:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 .cardComp:hover .buttonContainer {
@@ -483,8 +497,11 @@ body {
     align-items: center;
     padding: 30px 10px;
     cursor: pointer;
-    /* border-bottom:1px solid #5ECE7B; */
     font-family: raleway;
+  }
+
+  .navactive {
+    border-bottom: 1px solid #5ece7b;
   }
 
   .hamburger-menu {
@@ -503,12 +520,21 @@ body {
     font-size: 2.62rem;
   }
 
+  .imageSec img {
+    max-height: 350px;
+  }
+
   .mainContainer {
     flex-direction: row;
   }
 
   .productInfo h2 {
     font-size: 1.87rem;
+  }
+
+  .cardComp {
+    min-height: 500px;
+    margin-left: 80px;
   }
 
   .productInfo h3 {
