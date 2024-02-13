@@ -41,32 +41,20 @@ function MainPage() {
     <div>
       <Header onCategorySelect={handleSelectCategory} onselectedProduct={handleSelectProduct}/>
 
-      <div className="categoryName">
-        <h1>{selectedCategory} Category</h1>
+      <div className={`${selectedProduct ? "nondis" : "categoryName"}`}>
+        <h1>{`${selectedCategory ? selectedCategory : "All Products"}`}</h1>
       </div>
 
       <div className={`mainContainer ${selectedProduct ? "nondis" : ""}`}>
         {filtredProduct.map((product) => (
-          <Card
-            key={product.id}
-            name={product.title}
-            price={product.price}
-            image={product.gallery}
+          <Card key={product.id} name={product.title} price={product.price} image={product.gallery}
             onClick={() => handleSelectProduct(product.id)}
           />
         ))}
       </div>
 
       {selectedProduct && (
-        <ProductInfo
-          key={selectedProduct.id}
-          name={selectedProduct.title}
-          price={selectedProduct.price}
-          image={selectedProduct.gallery}
-          brand={selectedProduct.brand}
-          size={selectedProduct.size}
-          colors={selectedProduct.colors}
-          description={selectedProduct.description}
+        <ProductInfo key={selectedProduct.id} name={selectedProduct.title} price={selectedProduct.price} image={selectedProduct.gallery} brand={selectedProduct.brand} size={selectedProduct.size} colors={selectedProduct.colors} description={selectedProduct.description}
         />
       )}
     </div>

@@ -275,13 +275,12 @@ body {
 
 .selectedImage {
   display: flex;
-  width: 100%;
-  max-width: 610px;
-  max-height: 510px;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  margin-bottom: 100px;
   order: 1;
+  padding: 20px;
 }
 
 .selectedImage img {
@@ -317,7 +316,6 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   order: 3;
-  margin-right: 100px;
 }
 
 .productInfo h3 {
@@ -343,6 +341,11 @@ body {
   cursor: pointer;
 }
 
+.productSize div:hover {
+  background: #000;
+  color: #fff;
+}
+
 .productSize {
   display: flex;
   flex-direction: row;
@@ -358,17 +361,15 @@ body {
 }
 
 .productColor div {
-  width: 100%;
-  height: 100%;
-  max-width: 30px;
-  min-height: 10px;
+  width: 40px;
+  height: 40px;
   border: 1px solid #000;
-  background-color: #0f6450;
+  color: #fff;
   margin: 10px;
   cursor: pointer;
 }
 
-.nondis{
+.nondis {
   display: none;
 }
 
@@ -456,6 +457,15 @@ body {
   margin-bottom: 1px;
 }
 
+.descrp {
+  margin-bottom: 0;
+}
+
+div.productDescrp {
+  margin-top: 0;
+  padding-left: 0;
+}
+
 /* id end */
 
 @media screen and (max-width: 600px) {
@@ -516,6 +526,14 @@ body {
     margin: 60px 0 50px 100px;
   }
 
+  .productSize {
+    padding: 0 !important;
+  }
+
+  .productColor {
+    padding: 0 !important;
+  }
+
   .categoryName h1 {
     font-size: 2.62rem;
   }
@@ -542,26 +560,37 @@ body {
   }
 
   .infoImages {
-    flex-direction: column;
-    margin-left: 100px;
-    margin-right: 50px;
-    justify-content: start;
     order: 1;
+    margin-right: 50px;
+    flex-direction: column;
+    justify-content: start;
     box-sizing: border-box;
   }
 
   .infoImages img {
-    max-width: 240px;
+    min-width: 80px;
+  }
+
+  .infoimgActive {
+    border: 1px solid #5ece7bed;
+    box-shadow: 0 0 10px #5ece7b;
   }
 
   .selectedImage {
     order: 1;
+    max-width: 510px;
+    max-height: 510px;
     align-items: initial;
     margin-top: initial;
   }
 
+  .selectedImage img {
+    min-width: 250px;
+  }
+
   .infoContainer {
     flex-direction: row;
+    justify-content: center;
     margin-top: 80px;
   }
 
@@ -571,7 +600,7 @@ body {
 
   .productInfo {
     flex-direction: column;
-    margin: 0 120px 0 50px;
+
     order: 3;
     box-sizing: border-box;
   }
