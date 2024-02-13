@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import Hamburger from "./Hamburger";
 import Valute from "./Valute";
+import { useNavigate } from "react-router-dom";
 
-function Header({ onCategorySelect }) {
+function Header({ onCategorySelect, onselectedProduct }) {
   const [selectedCategory, setSelectedCategory] = useState("");
+  const navigate = useNavigate();
 
   const handleSelectedCategory = (category) => {
     setSelectedCategory(category);
     onCategorySelect(category);
+    onselectedProduct(null);
+    if (category === "") navigate("/");
   };
 
   return (
@@ -40,7 +44,10 @@ function Header({ onCategorySelect }) {
           </div>
         </div>
 
-        <Hamburger selectedCategory={selectedCategory} onSelectCategory={handleSelectedCategory} />
+        <Hamburger
+          selectedCategory={selectedCategory}
+          onSelectCategory={handleSelectedCategory}
+        />
 
         <div
           className="logocontainer"

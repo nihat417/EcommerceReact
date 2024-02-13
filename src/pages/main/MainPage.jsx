@@ -22,7 +22,6 @@ function MainPage() {
 
   const handleSelectProduct = (productId) => {
     const product = products.find((product) => product.id === productId);
-    console.log("Selected product:", product);
     setSelectProduct(product);
   };
 
@@ -40,7 +39,7 @@ function MainPage() {
 
   return (
     <div>
-      <Header onCategorySelect={handleSelectCategory} />
+      <Header onCategorySelect={handleSelectCategory} onselectedProduct={handleSelectProduct}/>
 
       <div className="categoryName">
         <h1>{selectedCategory} Category</h1>
