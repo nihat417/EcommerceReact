@@ -6,6 +6,7 @@ import ProductInfo from "./ProductInfo";
 
 import { allproducts } from "../../redux/slices/productsSlice";
 import { useDispatch, useSelector } from "react-redux";
+import Basket from "./Basket";
 
 function MainPage() {
   const dispatch = useDispatch();
@@ -39,22 +40,40 @@ function MainPage() {
 
   return (
     <div>
-      <Header onCategorySelect={handleSelectCategory} onselectedProduct={handleSelectProduct}/>
+      <Header
+        onCategorySelect={handleSelectCategory}
+        onselectedProduct={handleSelectProduct}
+      />
 
-      <div className={`${selectedProduct ? "nondis" : "categoryName"}`}>
+      <Basket />
+
+      {/* categoryName */}
+      <div className={`${selectedProduct ? "nondis" : "nondis"}`}>
         <h1>{`${selectedCategory ? selectedCategory : "All Products"}`}</h1>
       </div>
 
-      <div className={`mainContainer ${selectedProduct ? "nondis" : ""}`}>
+      <div className={`mainContainer ${selectedProduct ? "nondis" : "nondis"}`}>
         {filtredProduct.map((product) => (
-          <Card key={product.id} name={product.title} price={product.price} image={product.gallery}
+          <Card
+            key={product.id}
+            name={product.title}
+            price={product.price}
+            image={product.gallery}
             onClick={() => handleSelectProduct(product.id)}
           />
         ))}
       </div>
 
       {selectedProduct && (
-        <ProductInfo key={selectedProduct.id} name={selectedProduct.title} price={selectedProduct.price} image={selectedProduct.gallery} brand={selectedProduct.brand} size={selectedProduct.size} colors={selectedProduct.colors} description={selectedProduct.description}
+        <ProductInfo
+          key={selectedProduct.id}
+          name={selectedProduct.title}
+          price={selectedProduct.price}
+          image={selectedProduct.gallery}
+          brand={selectedProduct.brand}
+          size={selectedProduct.size}
+          colors={selectedProduct.colors}
+          description={selectedProduct.description}
         />
       )}
     </div>
