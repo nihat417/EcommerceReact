@@ -16,6 +16,7 @@ function MainPage() {
 
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedProduct, setSelectProduct] = useState(null);
+  const [basket, setBasket] = useState([]);
 
   const handleSelectCategory = (category) => {
     setSelectedCategory(category);
@@ -24,6 +25,11 @@ function MainPage() {
   const handleSelectProduct = (productId) => {
     const product = products.find((product) => product.id === productId);
     setSelectProduct(product);
+  };
+
+  const handleAddToBasket = (product) => {
+    setBasket([...basket, product]);
+    console.log(basket);
   };
 
   useEffect(() => {
@@ -43,6 +49,7 @@ function MainPage() {
       <Header
         onCategorySelect={handleSelectCategory}
         onselectedProduct={handleSelectProduct}
+        basket={basket}
       />
 
       <Basket />
@@ -60,6 +67,7 @@ function MainPage() {
             price={product.price}
             image={product.gallery}
             onClick={() => handleSelectProduct(product.id)}
+            onAddToBasket={handleAddToBasket}
           />
         ))}
       </div>

@@ -2,16 +2,23 @@ import React, { useState } from "react";
 import Hamburger from "./Hamburger";
 import Valute from "./Valute";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { userOrders } from "../../../redux/slices/orderSlice";
 
-function Header({ onCategorySelect, onselectedProduct }) {
+function Header({ onCategorySelect, onselectedProduct, basket }) {
   const [selectedCategory, setSelectedCategory] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSelectedCategory = (category) => {
     setSelectedCategory(category);
     onCategorySelect(category);
     onselectedProduct(null);
     if (category === "") navigate("/");
+  };
+
+  const handleAddToBasketClick = () => {
+    dispatch(userOrders({ orders: basket }));
   };
 
   return (
@@ -106,7 +113,7 @@ function Header({ onCategorySelect, onselectedProduct }) {
           <div className="valute">
             <Valute />
           </div>
-          <div className="shoppingCart">
+          <div className="shoppingCart" onClick={handleAddToBasketClick}>
             <svg
               width="20"
               height="20"

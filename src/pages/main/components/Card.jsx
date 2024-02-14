@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 
-function Cards({ name, image, price, onClick }) {
+function Cards({ name, image, price, onClick, onAddToBasket }) {
+  const handleAddToBasketClick = (event) => {
+    event.stopPropagation();
+    onAddToBasket({ name, image, price });
+  };
+
   return (
     <div className="cardComp" onClick={onClick}>
       <div className="imageSec">
         {image.length > 0 && <img src={image[0]} alt={name} />}
       </div>
-      <div className="buttonContainer">
+      <div className="buttonContainer" onClick={handleAddToBasketClick}>
         <button className="roundButton">
           <svg
             width="24"
