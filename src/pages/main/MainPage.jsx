@@ -48,11 +48,11 @@ function MainPage() {
       <Basket />
 
       {/* categoryName */}
-      <div className={`${selectedProduct ? "nondis" : "nondis"}`}>
+      <div className={`${selectedProduct ? "nondis" : "categoryName"}`}>
         <h1>{`${selectedCategory ? selectedCategory : "All Products"}`}</h1>
       </div>
 
-      <div className={`mainContainer ${selectedProduct ? "nondis" : "nondis"}`}>
+      <div className={`mainContainer ${selectedProduct ? "nondis" : ""}`}>
         {filtredProduct.map((product) => (
           <Card
             key={product.id}

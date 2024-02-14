@@ -242,7 +242,7 @@ body {
 
 .menu__item:hover {
   color: #5ece7bed;
-  text-shadow: 0 0 10px #5ece7b;
+  text-shadow: 0 0 50px #5ece7b;
 }
 
 .imageSec {
@@ -436,6 +436,11 @@ body {
   justify-content: center;
 }
 
+.buttonContainer :hover {
+  border: 1px solid #5ece7bed;
+  box-shadow: 0 0 10px #5ece7b;
+}
+
 .cardComp:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   cursor: pointer;
@@ -513,6 +518,12 @@ div.basketimg {
     position: relative;
     top: -200px;
     left: -200px;
+  }
+
+  .basketraw {
+    margin: 50px 50px 30px 100px;
+    padding: 30px 10px;
+    border-top: 1px solid green;
   }
 
   .basketCountsec p {

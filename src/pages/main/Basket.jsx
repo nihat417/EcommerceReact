@@ -4,7 +4,7 @@ import myimage from "../../assets/images/image.png";
 function Basket() {
   return (
     <div className="basketContainer">
-      <div className="basketraw">
+      {/* <div className="basketraw">
         <div className="basketPhotosec">
           <div className="basketimg">
             <img src={myimage} alt="" />
@@ -41,7 +41,7 @@ function Basket() {
         </div>
 
         <div></div>
-      </div>
+      </div> */}
     </div>
   );
 }

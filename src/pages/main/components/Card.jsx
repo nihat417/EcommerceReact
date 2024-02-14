@@ -1,5 +1,4 @@
-import React from "react";
-// import image from "../../../assets/images/image.png";
+import React, { useState, useEffect } from "react";
 
 function Cards({ name, image, price, onClick }) {
   return (
