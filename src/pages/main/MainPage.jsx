@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Card from "./components/Card";
 import ProductInfo from "./ProductInfo";
-// import mainloading from "../other/loading/mainloading"
-
 import { allproducts } from "../../redux/slices/productsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Basket from "./Basket";
@@ -16,10 +14,15 @@ function MainPage() {
 
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedProduct, setSelectProduct] = useState(null);
+  const [isBasketOpen, setIsBasketOpen] = useState(false);
   const [basket, setBasket] = useState([]);
 
   const handleSelectCategory = (category) => {
     setSelectedCategory(category);
+  };
+
+  const handleBasketChange = (isOpen) => {
+    setIsBasketOpen(isOpen);
   };
 
   const handleSelectProduct = (productId) => {
@@ -50,16 +53,24 @@ function MainPage() {
         onCategorySelect={handleSelectCategory}
         onselectedProduct={handleSelectProduct}
         basket={basket}
+        isBasketOpen={isBasketOpen}
+        onBasketOpenChange={handleBasketChange}
       />
 
-      <Basket />
-
-      {/* categoryName */}
-      <div className={`${selectedProduct ? "nondis" : "categoryName"}`}>
+      <div
+        className={`${
+          selectedProduct || isBasketOpen ? "nondis" : "categoryName"
+        }`}
+      >
+        {/* <h1 className={`${isBasketOpen ? "boldText" : "nondis"}`}>Cart</h1> */}
         <h1>{`${selectedCategory ? selectedCategory : "All Products"}`}</h1>
       </div>
 
-      <div className={`mainContainer ${selectedProduct ? "nondis" : ""}`}>
+      <div
+        className={`mainContainer ${
+          selectedProduct || isBasketOpen ? "nondis" : ""
+        }`}
+      >
         {filtredProduct.map((product) => (
           <Card
             key={product.id}
@@ -84,6 +95,8 @@ function MainPage() {
           description={selectedProduct.description}
         />
       )}
+
+      {isBasketOpen && <Basket />}
     </div>
   );
 }

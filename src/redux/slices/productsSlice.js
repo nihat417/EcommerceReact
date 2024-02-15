@@ -1,23 +1,22 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const allproducts = createAsyncThunk(
-  "products/fetch",
-  async (_) => {
-    try {
-      const response = await fetch('http://localhost:5000/api/products');
-      if (!response.ok) {
-        throw new Error('Failed to fetch products');
-      }
-      const data = await response.json();
-      return data.product; 
-    } catch (error) {
-      throw error;
+export const allproducts = createAsyncThunk("products/fetch", async (_) => {
+  try {
+    const response = await fetch("http://localhost:5000/api/products");
+    if (!response.ok) {
+      throw new Error("Failed to fetch products");
     }
+    const data = await response.json();
+    return data.product;
+  } catch (error) {
+    throw error;
   }
-);
+});
+
+
 
 const productsSlice = createSlice({
-  name: 'products',
+  name: "products",
   initialState: {
     product: [],
     loading: false,
@@ -31,8 +30,7 @@ const productsSlice = createSlice({
       })
       .addCase(allproducts.fulfilled, (state, action) => {
         state.loading = false;
-        state.product = action.payload; 
-        console.log(action.payload)
+        state.product = action.payload;
       })
       .addCase(allproducts.rejected, (state, action) => {
         state.loading = false;

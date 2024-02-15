@@ -5,7 +5,13 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { userOrders } from "../../../redux/slices/orderSlice";
 
-function Header({ onCategorySelect, onselectedProduct, basket }) {
+function Header({
+  onCategorySelect,
+  onselectedProduct,
+  basket,
+  isBasketOpen,
+  onBasketOpenChange,
+}) {
   const [selectedCategory, setSelectedCategory] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -19,6 +25,10 @@ function Header({ onCategorySelect, onselectedProduct, basket }) {
 
   const handleAddToBasketClick = () => {
     dispatch(userOrders({ orders: basket }));
+    const newBasketState = !isBasketOpen;
+    onBasketOpenChange(newBasketState);
+    console.log("Basket Clicked");
+    console.log(isBasketOpen);
   };
 
   return (

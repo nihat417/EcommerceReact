@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-function Cards({ name, image, price, onClick, onAddToBasket }) {
+function Cards({ name, image, price, title, onClick, onAddToBasket }) {
   const handleAddToBasketClick = (event) => {
     event.stopPropagation();
-    onAddToBasket({ name, image, price });
+    onAddToBasket({ name, image, price, title });
   };
 
   return (

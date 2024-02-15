@@ -245,6 +245,10 @@ body {
   text-shadow: 0 0 50px #5ece7b;
 }
 
+.boldText{
+  font-weight: 800;
+}
+
 .imageSec {
   display: flex;
   flex-direction: column;
