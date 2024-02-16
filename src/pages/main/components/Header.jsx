@@ -4,6 +4,7 @@ import Valute from "./Valute";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { userOrders } from "../../../redux/slices/orderSlice";
+import { clearToken } from "../../../redux/slices/tokenSlice";
 
 function Header({
   onCategorySelect,
@@ -11,6 +12,7 @@ function Header({
   basket,
   isBasketOpen,
   onBasketOpenChange,
+  onSelectCurrency,
 }) {
   const [selectedCategory, setSelectedCategory] = useState("");
   const navigate = useNavigate();
@@ -29,6 +31,10 @@ function Header({
     onBasketOpenChange(newBasketState);
     console.log("Basket Clicked");
     console.log(isBasketOpen);
+  };
+
+  const handleLogOutClick = () => {
+    dispatch(clearToken());
   };
 
   return (
@@ -121,7 +127,7 @@ function Header({
 
         <div className="basket">
           <div className="valute">
-            <Valute />
+            <Valute onSelectCurrency={onSelectCurrency} />
           </div>
           <div className="shoppingCart" onClick={handleAddToBasketClick}>
             <svg
@@ -143,6 +149,25 @@ function Header({
                 d="M15.6875 14.9814C14.4875 14.9814 13.498 15.9277 13.498 17.0752C13.498 18.2226 14.4876 19.1689 15.6875 19.1689C16.8875 19.1689 17.877 18.2226 17.877 17.0752C17.8565 15.9284 16.8875 14.9814 15.6875 14.9814ZM15.6875 17.9011C15.2031 17.9011 14.8239 17.5385 14.8239 17.0752C14.8239 16.612 15.2031 16.2493 15.6875 16.2493C16.172 16.2493 16.5512 16.612 16.5512 17.0752C16.5512 17.5188 16.1506 17.9011 15.6875 17.9011Z"
                 fill="#43464E"
               />
+            </svg>
+          </div>
+          <div className="logOut" onClick={handleLogOutClick}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="icon icon-tabler icon-tabler-logout"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+              <path d="M9 12h12l-3 -3" />
+              <path d="M18 15l3 -3" />
             </svg>
           </div>
         </div>

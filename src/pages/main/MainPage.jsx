@@ -13,6 +13,7 @@ function MainPage() {
   const error = useSelector((state) => state.products.error);
 
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedCurrency, setSelectedCurrency] = useState("$");
   const [selectedProduct, setSelectProduct] = useState(null);
   const [isBasketOpen, setIsBasketOpen] = useState(false);
   const [basket, setBasket] = useState([]);
@@ -23,6 +24,10 @@ function MainPage() {
 
   const handleBasketChange = (isOpen) => {
     setIsBasketOpen(isOpen);
+  };
+
+  const handleCurrencyChange = (currency) => {
+    setSelectedCurrency(currency);
   };
 
   const handleSelectProduct = (productId) => {
@@ -55,6 +60,7 @@ function MainPage() {
         basket={basket}
         isBasketOpen={isBasketOpen}
         onBasketOpenChange={handleBasketChange}
+        onSelectCurrency={handleCurrencyChange}
       />
 
       <div
@@ -77,6 +83,7 @@ function MainPage() {
             name={product.title}
             price={product.price}
             image={product.gallery}
+            currency={selectedCurrency}
             onClick={() => handleSelectProduct(product.id)}
             onAddToBasket={handleAddToBasket}
           />

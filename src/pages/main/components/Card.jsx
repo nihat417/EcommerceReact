@@ -1,9 +1,30 @@
 import React, { useState, useEffect } from "react";
 
-function Cards({ name, image, price, title, onClick, onAddToBasket }) {
+function Cards({
+  name,
+  image,
+  price,
+  title,
+  onClick,
+  onAddToBasket,
+  currency,
+}) {
   const handleAddToBasketClick = (event) => {
     event.stopPropagation();
     onAddToBasket({ name, image, price, title });
+  };
+
+  const convertPrice = (price) => {
+    switch (currency) {
+      case "$":
+        return price;
+      case "€":
+        return (price * 0.82).toFixed(2);
+      case "₼":
+        return (price * 1.7).toFixed(2);
+      default:
+        return price;
+    }
   };
 
   return (
@@ -39,7 +60,9 @@ function Cards({ name, image, price, title, onClick, onAddToBasket }) {
         <h3>{name}</h3>
       </div>
       <div className="priceCard">
-        <h4>{price}</h4>
+        <h4>
+          {convertPrice(price)} {currency}
+        </h4>
       </div>
     </div>
   );

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
-function Valute() {
+function Valute({onSelectCurrency }) {
   const options = ["$", "€", " ₼"];
   const [selectedOption, setSelectedOption] = useState(options[0]);
 
   const handleSelectChange = (event) => {
-    setSelectedOption(event.target.value);
+    const selectedCurrency = event.target.value;
+    setSelectedOption(selectedCurrency);
+    onSelectCurrency(selectedCurrency);
   };
 
   return (

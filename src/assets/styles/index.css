@@ -245,7 +245,11 @@ body {
   text-shadow: 0 0 50px #5ece7b;
 }
 
-.boldText{
+.logOut {
+  margin-left: 20px;
+}
+
+.boldText {
   font-weight: 800;
 }
 
