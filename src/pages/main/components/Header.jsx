@@ -25,12 +25,11 @@ function Header({
     if (category === "") navigate("/");
   };
 
-  const handleAddToBasketClick = () => {
-    dispatch(userOrders({ orders: basket }));
+  const handleAddToBasketClick = async () => {
+    await dispatch(userOrders({ orders: basket }));
     const newBasketState = !isBasketOpen;
     onBasketOpenChange(newBasketState);
-    console.log("Basket Clicked");
-    console.log(isBasketOpen);
+    console.log(orders);
   };
 
   const handleLogOutClick = () => {
