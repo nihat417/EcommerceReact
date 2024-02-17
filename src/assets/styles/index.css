@@ -497,7 +497,7 @@ div.productDescrp {
 .basketPhotosec img {
   width: 100%;
   object-fit: contain;
-  max-width: 500px;
+  max-width: 200px;
   box-sizing: border-box;
 }
 
@@ -577,8 +577,8 @@ div.basketimg {
     max-width: 300px;
     transform: rotate(90deg);
     position: relative;
-    top: -200px;
-    left: -200px;
+    top: -50px;
+    left: -150px;
   }
 
   .basketraw {

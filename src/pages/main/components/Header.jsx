@@ -29,8 +29,7 @@ function Header({
     await dispatch(userOrders({ orders: basket }));
     const newBasketState = !isBasketOpen;
     onBasketOpenChange(newBasketState);
-    console.log(orders);
-  };
+  }; 
 
   const handleLogOutClick = () => {
     dispatch(clearToken());

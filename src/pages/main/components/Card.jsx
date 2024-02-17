@@ -4,14 +4,16 @@ function Cards({
   name,
   image,
   price,
-  title,
+  color,
+  sizes,
+  description,
   onClick,
   onAddToBasket,
   currency,
 }) {
   const handleAddToBasketClick = (event) => {
     event.stopPropagation();
-    onAddToBasket({ name, image, price, title });
+    onAddToBasket({ name, image,color,sizes, price, description });
   };
 
   const convertPrice = (price) => {

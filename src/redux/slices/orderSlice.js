@@ -20,31 +20,6 @@ export const userOrders = createAsyncThunk(
       }
 
       const data = await response.json();
-      return data;
-    } catch (error) {
-      throw error;
-    }
-  }
-);
-
-export const getOrder = createAsyncThunk(
-  "orders/getOrder",
-  async (_, thunkApi) => {
-    try {
-      const token = selectToken(thunkApi.getState());
-      const response = await fetch("http://localhost:5000/api/orders", {
-        method: "GET",
-        mode: "cors",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      if (!response.ok) {
-        throw new Error("Failed to get orders");
-      }
-
-      const data = await response.json();
-      console.log(data.orderItems);
       return data.orderItems;
     } catch (error) {
       throw error;
@@ -53,7 +28,7 @@ export const getOrder = createAsyncThunk(
 );
 
 const orderSlice = createSlice({
-  name: "orderitem",
+  name: "order",
   initialState: {
     loading: false,
     error: null,
@@ -75,18 +50,6 @@ const orderSlice = createSlice({
         state.orders = action.payload;
       })
       .addCase(userOrders.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload;
-      })
-      .addCase(getOrder.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(getOrder.fulfilled, (state, action) => {
-        state.loading = false;
-        state.orders = action.payload;
-      })
-      .addCase(getOrder.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });

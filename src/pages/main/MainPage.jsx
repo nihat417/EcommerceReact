@@ -83,6 +83,9 @@ function MainPage() {
             name={product.title}
             price={product.price}
             image={product.gallery}
+            description={product.description}
+            color={product.colors}
+            sizes={product.size}
             currency={selectedCurrency}
             onClick={() => handleSelectProduct(product.id)}
             onAddToBasket={handleAddToBasket}
