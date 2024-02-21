@@ -563,7 +563,9 @@ div.basketimg {
   text-decoration: underline;
   cursor: pointer;
 }
-
+.sc{
+  display: flex;
+}
 /* id end */
 
 @media screen and (max-width: 600px) {
