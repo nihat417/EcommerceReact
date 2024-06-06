@@ -731,7 +731,6 @@ div.basketimg {
 
   .productInfo {
     flex-direction: column;
-
     order: 3;
     box-sizing: border-box;
   }
