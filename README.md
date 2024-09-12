@@ -4,10 +4,21 @@ Welcome to the React + Vite template! This template provides a minimal setup to 
 
 # Photos
 
-![Alt Text](https://portfoliosa417.blob.core.windows.net/voltagephotos/loginEcommerce.png)
-![Alt Text](https://portfoliosa417.blob.core.windows.net/voltagephotos/mainEcommerce.png)
-![Alt Text](https://portfoliosa417.blob.core.windows.net/voltagephotos/aboutecommerce.png)
-![Alt Text](https://portfoliosa417.blob.core.windows.net/voltagephotos/basketecommerce.png)
+### Login Page
+![Login Page](https://www.dropbox.com/scl/fi/lguwipvfz966vqm22rwbj/loginecomr.png?rlkey=9j46mls2jdn670y7n0qoh58fb&raw=1)
+
+### Main Page
+![Main Page](https://www.dropbox.com/scl/fi/2s4jqlvuf55ipq95m4fy4/mainecommerc.png?rlkey=fimod89ggskkr5b41nyg6cfn3&raw=1)
+
+### About Page
+![About Page](https://www.dropbox.com/scl/fi/vuc6j1bph2gosausfpjv5/aboutecomrc.png?rlkey=tl7be6xag0grypecrfshsdr6k&raw=1)
+
+### Basket Page
+![Basket Page](https://www.dropbox.com/scl/fi/i0ynl5p07yqdy5zw419l0/basket.png?rlkey=4mb8by2d26h9rj1dnzpuwaogo&raw=1)
+
+### Demo Video
+Here is a short demo of the app:
+[Watch the demo](https://www.youtube.com/embed/iErrToQQ4lA)
 
 
 # Video Link
